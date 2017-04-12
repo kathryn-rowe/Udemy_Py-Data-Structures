@@ -21,16 +21,18 @@ def check_anagram(sent1, sent2):
     sent_count = {}
 
     for letter in sent1:
-        if letter in sent_count:
-            sent_count[letter] += 1
-        else:
-            sent_count[letter] = 1
+        # if letter in sent_count:
+        #     sent_count[letter] += 1
+        # else:
+        #     sent_count[letter] = 1
+        sent_count[letter] = sent_count.get(letter, 0) + 1
 
     for letter in sent2:
-        if letter in sent_count:
-            sent_count[letter] -= 1
-        else:
-            sent_count[letter] = 1
+        # if letter in sent_count:
+        #     sent_count[letter] -= 1
+        # else:
+        #     sent_count[letter] = 1
+        sent_count[letter] = sent_count.get(letter, 0) - 1
 
     for count in sent_count:
         if sent_count[count] != 0:
