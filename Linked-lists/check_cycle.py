@@ -35,6 +35,7 @@ def check_cycle(node):
             # Return True if the question asks if it is a cycle
             # return True
 
+            # Check to see at which node the connect at, Floyd's Algorithm
             marker1 = node
 
             while marker1 != marker2:
