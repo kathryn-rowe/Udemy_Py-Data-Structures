@@ -20,6 +20,7 @@ def build_parse_tree(math_exp):
             currentTree.setRootVal(int(i))
             parent = pStack.pop()
             currentTree = parent
+        # if it's an expression, set the value, create a right child, save the parent on the stack
         elif i in ['+', '-', '*', '/', ')']:
             currentTree.setRootVal(i)
             currentTree.insertRight('')
