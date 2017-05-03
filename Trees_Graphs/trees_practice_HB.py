@@ -63,6 +63,16 @@ class BinarySearchNode(object):
             elif current.data < data:
                 current.data = current.left
 
+        # written recursively
+        if self.data == data:
+            return self
+        elif self.left and data < self.data:
+            return self.left._search(data)
+        elif self.right and data > self.data:
+            return self.right._search(data)
+        else:
+            return "Data is not in this tree"
+
 
 class BidirectionalNode(object):
 

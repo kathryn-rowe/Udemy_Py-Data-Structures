@@ -49,3 +49,31 @@ class BinaryTree(object):
 
     def getRootVal(self):
         return self.data
+
+    def _add(self, data):
+
+        new_node = Node(data)
+
+        if not self.item:
+            self.item = new_node
+        elif not self.left:
+            self.left = new_node
+        elif not self.right:
+            self.right = new_node
+        else:
+            self.left = self.left._add(data)
+
+        return self
+
+    def _search(self, value):
+
+        if self.data == value:
+            return True
+
+        found = False
+
+        if self.left:
+            found = self.left._search(value)
+        if self.right:
+            found = found or self.right._search(value)
+        return found

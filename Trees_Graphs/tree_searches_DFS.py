@@ -1,5 +1,14 @@
 # Preorder search
 # example: Book, read it in order, from left to right, top to bottom
+# Depth-first traversals, or depth-first search (DFS), are algorithms thatf irst
+# traverse the structure's by its depth.
+# DFS are usually implemented with LIFO structures such as stacks, so
+# discovered nodes are tracked. Differently from tree, DFS needs to have a
+# structure to mark the visited nodes when traversing graphs (otherwise they
+# might be stuck in an infinite loop). The runtime is O(number of reachable
+# nodes + total number of outgoing edges from these nodes) = O(V + E).
+# DFS comes in three flavors, depending on when you print (or save) the
+# current node's value: preorder, postorder, inorder.
 
 
 def preorder1(tree):
@@ -29,7 +38,7 @@ def postorder(tree):
 
 
 # Inorder search
-# example: evaluate in exact order, checking children
+# example: evaluate in exact order, checking children, Binary Search Tree
 
 def inorder(tree):
     if tree is not None:
